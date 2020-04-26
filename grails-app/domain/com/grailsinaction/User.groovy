@@ -26,7 +26,7 @@ class User {
         posts()
     }
 
-    String getDisplayString345() { return loginId } //Creates a read-only displayString property for the scaffolding(需修改template才行使用)
+    String getDisplayString() { return loginId } //Creates a read-only displayString property for the scaffolding(需修改template才行使用)
 
 
 }
