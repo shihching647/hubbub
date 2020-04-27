@@ -1,36 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="DESKTOP-CEA8718" id="0" name="PostIntegrationSpec" package="com.grailsinaction" skipped="0" tests="3" time="0.411" timestamp="2020-04-25T17:51:38">
+  <testsuite errors="0" failures="0" hostname="DESKTOP-RQAUQ6I" id="0" name="QueryIntegrationSpec" package="com.grailsinaction" skipped="0" tests="5" time="0.299" timestamp="2020-04-27T05:17:22">
       <properties />
 
-      <testcase classname="com.grailsinaction.PostIntegrationSpec" name="Adding posts to user links post to user" time="0.316" />
+      <testcase classname="com.grailsinaction.QueryIntegrationSpec" name="Simple property comparison" time="0.204" />
 
-      <testcase classname="com.grailsinaction.PostIntegrationSpec" name="Ensure posts linked to a user can be retrieved" time="0.071" />
+      <testcase classname="com.grailsinaction.QueryIntegrationSpec" name="Multiple criteria" time="0.015" />
 
-      <testcase classname="com.grailsinaction.PostIntegrationSpec" name="Exercise tagging several posts with various tags" time="0.018" />
+      <testcase classname="com.grailsinaction.QueryIntegrationSpec" name="Query on association" time="0.048" />
 
-      <system-out><![CDATA[--Output from Adding posts to user links post to user--
-Hibernate: select this_.id as id1_4_0_, this_.version as version2_4_0_, this_.date_created as date_cre3_4_0_, this_.login_id as login_id4_4_0_, this_.password as password5_4_0_ from user this_ where this_.login_id=?
-Hibernate: select this_.id as id1_4_0_, this_.version as version2_4_0_, this_.date_created as date_cre3_4_0_, this_.login_id as login_id4_4_0_, this_.password as password5_4_0_ from user this_ where this_.login_id=?
-Hibernate: insert into user (version, date_created, login_id, password) values (?, ?, ?, ?)
---Output from Ensure posts linked to a user can be retrieved--
-Hibernate: select this_.id as id1_4_0_, this_.version as version2_4_0_, this_.date_created as date_cre3_4_0_, this_.login_id as login_id4_4_0_, this_.password as password5_4_0_ from user this_ where this_.login_id=?
-Hibernate: select this_.id as id1_4_0_, this_.version as version2_4_0_, this_.date_created as date_cre3_4_0_, this_.login_id as login_id4_4_0_, this_.password as password5_4_0_ from user this_ where this_.login_id=?
-Hibernate: insert into user (version, date_created, login_id, password) values (?, ?, ?, ?)
-Hibernate: insert into post (version, content, date_created, user_id) values (?, ?, ?, ?)
-Hibernate: insert into post (version, content, date_created, user_id) values (?, ?, ?, ?)
-Hibernate: insert into post (version, content, date_created, user_id) values (?, ?, ?, ?)
---Output from Exercise tagging several posts with various tags--
-Hibernate: select this_.id as id1_4_0_, this_.version as version2_4_0_, this_.date_created as date_cre3_4_0_, this_.login_id as login_id4_4_0_, this_.password as password5_4_0_ from user this_ where this_.login_id=?
-Hibernate: select this_.id as id1_4_0_, this_.version as version2_4_0_, this_.date_created as date_cre3_4_0_, this_.login_id as login_id4_4_0_, this_.password as password5_4_0_ from user this_ where this_.login_id=?
-Hibernate: insert into user (version, date_created, login_id, password) values (?, ?, ?, ?)
-Hibernate: insert into tag (version, name, user_id) values (?, ?, ?)
-Hibernate: insert into tag (version, name, user_id) values (?, ?, ?)
+      <testcase classname="com.grailsinaction.QueryIntegrationSpec" name="Query against a range value" time="0.016" />
+
+      <testcase classname="com.grailsinaction.QueryIntegrationSpec" name="Retrieve a single instance" time="0.016" />
+
+      <system-out><![CDATA[--Output from Simple property comparison--
+--Output from Multiple criteria--
+--Output from Query on association--
+--Output from Query against a range value--
+--Output from Retrieve a single instance--
 ]]></system-out>
 
-      <system-err><![CDATA[--Output from Adding posts to user links post to user--
---Output from Ensure posts linked to a user can be retrieved--
---Output from Exercise tagging several posts with various tags--
+      <system-err><![CDATA[--Output from Simple property comparison--
+--Output from Multiple criteria--
+--Output from Query on association--
+--Output from Query against a range value--
+--Output from Retrieve a single instance--
 ]]></system-err>
 
   </testsuite>

@@ -20,8 +20,8 @@ environments {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:mysql://localhost:3306/hubbub"
             username = "root"
-//            password = "53434976"
-            password = "123456"
+            password = "53434976"
+//            password = "123456"
         }
         hibernate{
             show_sql = true
@@ -32,8 +32,8 @@ environments {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:mysql://localhost:3306/hubbub"
             username = "root"
-//            password = "53434976"
-            password = "123456"
+            password = "53434976"
+//            password = "123456"
         }
         hibernate{
             show_sql = false
