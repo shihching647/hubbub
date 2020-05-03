@@ -14,8 +14,31 @@ class UserController {
         }.list()
 //        System.out.print request.getParameter("loginId")
 //        System.out.print params.loginId
-        return[users : users, term : params.loginId, totalUsers: User.count()]
+        return [ users: users,
+                 term: params.loginId,
+                 totalUsers: User.count() ]
         //User.count()直接得到總數量
         //params.loginId等於 requset.getParameter("loginId")
+    }
+
+    def advSearch() {}
+
+    def advResults() {
+        def profileProps = Profile.metaClass.properties*.name
+        def profiles = Profile.withCriteria {
+            "${params.queryType}" {
+
+                params.each { field, value ->
+
+                    if (profileProps.grep(field) && value) {
+                        ilike(field, value)
+                    }
+                }
+
+            }
+
+        }
+        [ profiles : profiles ]
+
     }
 }

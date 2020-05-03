@@ -20,11 +20,18 @@ environments {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:mysql://localhost:3306/hubbub"
             username = "root"
-            password = "53434976"
-//            password = "123456"
+//            password = "53434976"
+            password = "123456"
+            //與hibernate.show_sql = ture效果一樣
+//            logSql = true
         }
         hibernate{
-            show_sql = true
+            //與dataSource.logSql = ture效果一樣
+//            show_sql = true
+
+            //開以下兩行就不用開 logSql = true
+            format_sql = true
+            use_sql_comments = true
         }
     }
     test {
@@ -32,8 +39,8 @@ environments {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:mysql://localhost:3306/hubbub"
             username = "root"
-            password = "53434976"
-//            password = "123456"
+//            password = "53434976"
+            password = "123456"
         }
         hibernate{
             show_sql = false

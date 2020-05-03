@@ -9,7 +9,7 @@
 <div>
     <div id="hd">
         <g:link uri="/">
-            <g:img id="logo" uri="images/headerlogo.png" alt="hubbub logo"/>
+            <g:img id="logo" uri="/hubbub/images/headerlogo.png" alt="hubbub logo"/>
         </g:link>
     </div>
     <div id="bd"><!-- start body -->
