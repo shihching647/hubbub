@@ -2,6 +2,12 @@ package com.grailsinaction
 
 class PostController {
     static scaffold = true
+    def index () {
+        if(!params.id){
+            params.id = "chuck_norris"
+        }
+        redirect(action : "timeline", params: params) //action要用字串
+    }
 
     def timeline(){
         def user = User.findByLoginId(params.id) //預設URL mapping -> /controller/action/id
