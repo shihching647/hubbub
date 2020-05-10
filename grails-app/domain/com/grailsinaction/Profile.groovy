@@ -2,7 +2,8 @@ package com.grailsinaction
 
 class Profile {
 
-    User user //資料庫裡的profile table會存user的id
+//    User user //資料庫裡的profile table會存user的id
+    static belongsTo = [user: User] //與上面的區別-->確保validation會cascades(當register時User與Profile會一起驗證(p.167))
     byte[] photo //在資料庫會建立type為BLOB的欄位
     String fullName
     String bio

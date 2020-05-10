@@ -83,7 +83,7 @@ class PostControllerSpec extends Specification {
     }
 
     @spock.lang.Unroll //讓不同where條件的測試結果分開顯示
-    def "test" (){ //測試index方法(名稱取中文compile會error)
+    def "測試index方法正確轉交" (){
         given:
         params.id = suppliedId
 
@@ -98,4 +98,23 @@ class PostControllerSpec extends Specification {
         null       | '/post/timeline/chuck_norris'
         'joe_cool' | '/post/timeline/joe_cool'
     }
+
+    //測試postController by postService
+    def "Adding a valid new post to the timeline by postService" () {
+        given: "a mock post Service"
+        //Mock(Class)
+        def mockPostService = Mock(PostService)
+        //當此postService.createPost被呼叫時,會回傳new Post(content: "Mock Post"), 參數(_, _)代表指隨意的兩個參數都可以傳入, 前面的 1* 代表此service只會被呼叫一次,
+        1 * mockPostService.createPost(_, _) >> new Post(content: "Mock Post")
+        controller.postService = mockPostService //inject postService into the controller
+
+        when: "controller is invoked"
+        def result = controller.addPost("joe_cool", "Posting up a storm")
+
+        then: "redirected to timeline, flash message tells us all is well"
+        flash.message ==~ "Added new post: Mock Post" //==~ The regex match operator
+        response.redirectedUrl == "/post/timeline/joe_cool"
+    }
+
+
 }

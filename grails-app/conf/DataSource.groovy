@@ -18,7 +18,7 @@ environments {
     development {
         dataSource {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:mysql://localhost:3306/hubbub"
+            url = "jdbc:mysql://localhost:3306/hubbub?characterEncoding=utf8&useUnicode=true" //要設定characterEncoding=utf8和useUnicode=true這兩個參數送進DB中文才不會是亂碼
             username = "root"
 //            password = "53434976"
             password = "123456"
